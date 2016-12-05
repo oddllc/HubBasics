@@ -11,13 +11,13 @@
 
 	<groupId>net.notfab</groupId>
 	<artifactId>HubBasics</artifactId>
-	<version>5.0d_${build.number}</version>
+	<version>5.0q_000</version>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
-		<build.number>666</build.number>
+		<build.number>000</build.number>
 	</properties>
 
 	<repositories>
@@ -31,7 +31,7 @@
 		</repository>
 		<repository>
 			<id>vault-repo</id>
-			<url>http://nexus.theyeticave.net/content/repositories/pub_releases</url>
+			<url>http://nexus.hc.to/content/repositories/pub_releases</url>
 		</repository>
 	</repositories>
 
@@ -40,14 +40,14 @@
 		<dependency>
 			<groupId>org.spigotmc</groupId>
 			<artifactId>spigot-api</artifactId>
-			<version>1.10.2-R0.1-SNAPSHOT</version>
+			<version>1.11-R0.1-SNAPSHOT</version>
 			<scope>provided</scope>
 		</dependency>
 		<!-- Minecraft API -->
 		<dependency>
 			<groupId>org.bukkit</groupId>
-			<artifactId>craftbukkit</artifactId>
-			<version>1.10.2-R0.1-SNAPSHOT</version>
+			<artifactId>bukkit</artifactId>
+			<version>1.11-R0.1-SNAPSHOT</version>
 			<scope>provided</scope>
 		</dependency>
 		<!-- ProtocolLib -->
@@ -98,6 +98,13 @@
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-pool2</artifactId>
 			<version>2.4.2</version>
+			<scope>compile</scope>
+		</dependency>
+		<!-- Commons Lang V3 -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.5</version>
 			<scope>compile</scope>
 		</dependency>
 	</dependencies>

@@ -77,7 +77,11 @@ public class NMSVersion {
      * NMS Version 1.10 R1
      */
     public static final String V1_10_R1 = "v1_10_R1";
-
+    /**
+     * NMS Version 1.11 R1
+     */
+    public static final String V1_11_R1 = "v1_11_R1";
+    
     private Map<Integer, String> versionMap;
     @Getter private int versionID;
 
@@ -89,11 +93,12 @@ public class NMSVersion {
         String version = packageName.substring(packageName.lastIndexOf('.') + 1);
         if (this.versionMap.containsValue(version)) {
             this.versionID = getVersionID(version);
+            Bukkit.getConsoleSender().sendMessage("[HubBasics] NMS Version: " + version);
         } else {
-            this.versionID = 0;
+            this.versionID = getVersionID(V1_11_R1);
             Bukkit.getConsoleSender().sendMessage(ChatColor.DARK_RED + "----------------------------------------------------------");
             Bukkit.getConsoleSender().sendMessage("");
-            Bukkit.getConsoleSender().sendMessage(ChatColor.DARK_RED + "" + ChatColor.BOLD + "YOU ARE RUNNING AN UNSUPPORTED VERSION OF CRAFTBUKKIT!");
+            Bukkit.getConsoleSender().sendMessage(ChatColor.DARK_RED + "" + ChatColor.BOLD + "YOU ARE RUNNING AN UNSUPPORTED VERSION (" + version + ") OF CRAFTBUKKIT!");
             Bukkit.getConsoleSender().sendMessage("");
             Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "HubBasics functionality will at best be limited. Please don't come");
             Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "complaining to us, the developers of HubBasics, when something breaks,");
@@ -101,7 +106,7 @@ public class NMSVersion {
             Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "in no way accept responsibility for ANY damage caused to a server running");
             Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "an unsupported version of CraftBukkit. It is recommended that you change to");
             Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "a supported version of CraftBukkit. Supported versions are 1.7*, 1.8*, 1.9,");
-            Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "1.10. Versions marked with an asterisk (*) may have decreased functionality.");
+            Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "1.10, 1.11. Versions marked with an asterisk (*) may have decreased functionality.");
             Bukkit.getConsoleSender().sendMessage("");
             Bukkit.getConsoleSender().sendMessage(ChatColor.DARK_RED + "----------------------------------------------------------");
         }
@@ -119,6 +124,7 @@ public class NMSVersion {
         registerVersion(V1_9_R1);
         registerVersion(V1_9_R2);
         registerVersion(V1_10_R1);
+        registerVersion(V1_11_R1);
     }
 
     private void registerVersion(String string) {
